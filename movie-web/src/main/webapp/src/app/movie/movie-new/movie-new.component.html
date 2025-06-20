@@ -1,0 +1,12 @@
+<p>movie-new works!</p>
+<div>
+
+  <label> Title: <input #titleInput type="text"></label><br>
+  <label> Director: <input #directorInput type="text"></label><br>
+  <label> Year: <input #yearInput type="text"></label><br>
+
+  <label> price: <input #price type="text"></label><br>
+</div>
+<div>
+  <button (click)="onSave(titleInput.value,directorInput.value,yearInput.value,price.value)">Save</button>
+</div>

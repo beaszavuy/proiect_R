@@ -1,0 +1,11 @@
+<p>Add new Cleint!</p>
+<div>
+
+  <label> Name: <input #nameInput type="text"></label><br>
+  <label> Phone number: <input #phoneInput type="text"></label><br>
+
+
+</div>
+<div>
+  <button (click)="onSave(nameInput.value,phoneInput.value)">Save</button>
+</div>

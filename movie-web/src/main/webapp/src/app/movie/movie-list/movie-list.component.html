@@ -1,0 +1,7 @@
+<h2>Movies</h2>
+
+<ol>
+  <li *ngFor="let movie of movies"> {{movie.title}}
+    <button (click)="onDelete(movie)">Delete</button>
+  </li>
+</ol>
