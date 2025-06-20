@@ -6,6 +6,7 @@ import {Location} from "@angular/common";
 @Component({
   selector: 'app-movie-new',
   templateUrl: './movie-new.component.html',
+  standalone: true,
   styleUrls: ['./movie-new.component.css']
 })
 export class MovieNewComponent implements OnInit {
@@ -30,11 +31,10 @@ export class MovieNewComponent implements OnInit {
     this.movieService.saveMovie(movie).subscribe({
       next: (savedMovie) => {
         console.log("Movie saved:", savedMovie);
-        this.location.back();  // csak itt navigálj vissza, ha sikerült
+        this.location.back();
       },
       error: (err) => {
         console.error("Save error:", err);
-        // ide tehetsz hibakezelést (pl. üzenet a felhasználónak)
       }
     });
   }

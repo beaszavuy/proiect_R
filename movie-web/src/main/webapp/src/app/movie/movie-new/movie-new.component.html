@@ -1,12 +1,36 @@
-<p>movie-new works!</p>
-<div>
+<div style="max-width: 400px; margin: 40px auto; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-family: Arial, sans-serif; background-color: #f9f9f9;">
 
-  <label> Title: <input #titleInput type="text"></label><br>
-  <label> Director: <input #directorInput type="text"></label><br>
-  <label> Year: <input #yearInput type="text"></label><br>
+  <h2 style="text-align: center; color: #333;">🎬 Add New Movie</h2>
 
-  <label> price: <input #price type="text"></label><br>
-</div>
-<div>
-  <button (click)="onSave(titleInput.value,directorInput.value,yearInput.value,price.value)">Save</button>
+  <div style="margin-top: 20px;">
+    <label for="title" style="display: block; margin-bottom: 8px; color: #555;">Title:</label>
+    <input #titleInput id="title" type="text" placeholder="Enter title"
+           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-top: 20px;">
+    <label for="director" style="display: block; margin-bottom: 8px; color: #555;">Director:</label>
+    <input #directorInput id="director" type="text" placeholder="Enter director"
+           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-top: 20px;">
+    <label for="year" style="display: block; margin-bottom: 8px; color: #555;">Year:</label>
+    <input #yearInput id="year" type="number" placeholder="Enter year"
+           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-top: 20px;">
+    <label for="price" style="display: block; margin-bottom: 8px; color: #555;">Price:</label>
+    <input #price id="price" type="number" step="0.01" placeholder="Enter price"
+           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-top: 30px; text-align: center;">
+    <button (click)="onSave(titleInput.value, directorInput.value, yearInput.value, price.value)"
+            style="padding: 10px 20px; background-color: #1976d2; border: none; border-radius: 6px; color: white; cursor: pointer; font-weight: bold;">
+      Save
+    </button>
+  </div>
+
 </div>

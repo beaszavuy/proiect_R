@@ -1,11 +1,24 @@
-<p>Add new Cleint!</p>
-<div>
+<div style="max-width: 400px; margin: 40px auto; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-family: Arial, sans-serif; background-color: #f9f9f9;">
 
-  <label> Name: <input #nameInput type="text"></label><br>
-  <label> Phone number: <input #phoneInput type="text"></label><br>
+  <h2 style="text-align: center; color: #333;">Add New Client</h2>
 
+  <div style="margin-top: 20px;">
+    <label for="name" style="display: block; margin-bottom: 8px; color: #555;">Name:</label>
+    <input #nameInput id="name" type="text" placeholder="Enter name"
+           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+  </div>
 
-</div>
-<div>
-  <button (click)="onSave(nameInput.value,phoneInput.value)">Save</button>
+  <div style="margin-top: 20px;">
+    <label for="phone" style="display: block; margin-bottom: 8px; color: #555;">Phone number:</label>
+    <input #phoneInput id="phone" type="text" placeholder="Enter phone number"
+           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-top: 30px; text-align: center;">
+    <button (click)="onSave(nameInput.value, phoneInput.value)"
+            style="padding: 10px 20px; background-color: #4CAF50; border: none; border-radius: 6px; color: white; cursor: pointer; font-weight: bold;">
+      Save
+    </button>
+  </div>
+
 </div>

@@ -4,7 +4,7 @@ import {Client} from "../shared/client.model";
 import {Location} from "@angular/common";
 
 @Component({
-  selector: 'app-movie-new',
+  selector: 'app-client-new',
   templateUrl: './client-new.component.html',
   standalone: true,
   styleUrls: ['./client-new.component.css']
@@ -24,17 +24,11 @@ export class ClientNewComponent implements OnInit {
     const client = {
       name,
       phone,
-
     };
 
-    this.clientService.saveClient(client).subscribe({
-      next: (savedClient) => {
-        console.log("Client saved:", savedClient);
-        this.location.back();
-      },
-      error: (err) => {
-        console.error("Save error:", err);
-      }
+    this.clientService.saveClient({name: 'Teszt', phone: '12345'}).subscribe({
+      next: res => console.log('Mentés sikeres', res),
+      error: err => console.error('Mentés hiba', err)
     });
   }
 
