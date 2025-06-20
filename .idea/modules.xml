@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/catalog-core/catalog-1-list.catalog-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/catalog-core/catalog-1-list.catalog-core.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/catalog-web/catalog-1-list.catalog-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/catalog-web/catalog-1-list.catalog-web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/movie-core/catalog-1-list.movie-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/movie-core/catalog-1-list.movie-core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/movie-web/catalog-1-list.movie-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/movie-web/catalog-1-list.movie-web.main.iml" />
     </modules>
   </component>
 </project>

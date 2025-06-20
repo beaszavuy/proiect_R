@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/catalog-core" />
-            <option value="$PROJECT_DIR$/catalog-web" />
+            <option value="$PROJECT_DIR$/movie-core" />
+            <option value="$PROJECT_DIR$/movie-web" />
           </set>
         </option>
       </GradleProjectSettings>

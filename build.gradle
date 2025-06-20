@@ -1,5 +1,5 @@
 allprojects {
-    group 'ro.ubb.catalog'
+    group 'ro.ubb.movie'
     version '1.0-SNAPSHOT'
 
     apply plugin: 'java'
