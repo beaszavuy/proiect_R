@@ -23,4 +23,7 @@ export class ClientsComponent implements OnInit{
     console.log("addNewMovie called");
     this.router.navigate(['/client-new']);
   }
+  // editClient(id: number) {
+  //   this.router.navigate(['/client-edit', id]);
+  // }
 }

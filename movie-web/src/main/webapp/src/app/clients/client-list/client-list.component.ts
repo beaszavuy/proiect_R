@@ -50,5 +50,8 @@ export class ClientListComponent implements OnInit {
   gotoDetail(): void {
     this.router.navigate(['/clients/detail', this.selectedClient?.id]);
   }
+  editClient(id: number): void {
+    this.router.navigate(['/client-edit', id]);
+  }
 
 }
