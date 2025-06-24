@@ -13,7 +13,7 @@ public class Initializer implements WebApplicationInitializer {
     public void onStartup(ServletContext container)
             throws ServletException {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.scan("ro.ubb.movie.web.config");
+        context.scan("ro.ubb.movie.web.config", "ro.ubb.movie.web.controller", "ro.ubb.movie.web.converter");
 
         ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(context));
         dispatcher.setLoadOnStartup(1);

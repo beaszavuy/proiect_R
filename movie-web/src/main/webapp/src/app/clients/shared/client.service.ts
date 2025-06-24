@@ -22,12 +22,12 @@ export class ClientService {
       .get<Array<Client>>(this.clientsUrl);
   }
 
-getClient(id: number): Observable<Client | undefined> {
-  return this.getClients()
-    .pipe(
-      map(clients => clients.find(clients => clients.id === id))
-    );
-}
+  getClient(id: number): Observable<Client | undefined> {
+    return this.getClients()
+      .pipe(
+        map(clients => clients.find(clients => clients.id === id))
+      );
+  }
 saveClient(client: {name: string; phone:string}):Observable<Client>{
     return this.httpClient.post<Client>(this.clientsUrl, client)
 }
@@ -36,6 +36,7 @@ update(client: Client): Observable<Client> {
   return this.httpClient
     .put<Client>(url, client);
 }
+
 deleteClient(id: number | undefined): Observable<any> {
   const url = `${this.clientsUrl}/${id}`;
   return this.httpClient

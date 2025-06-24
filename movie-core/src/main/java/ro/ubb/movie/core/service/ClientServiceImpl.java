@@ -41,17 +41,17 @@ public class ClientServiceImpl implements ClientService {
     public Client updateClient(Long clientId, String name, String phone) {
         log.trace("updateClient: name={}, phone={}", name, phone);
 
-        Optional<Client> client = clientRepository.findById(clientId);
+        Client client = clientRepository.findById(clientId)
+                .orElseThrow(() -> new RuntimeException("Kliens nem található id=" + clientId));
 
-//        student.ifPresent(s->{
-//            s.setSerialNumber(serialNumber);
-//            s.setName(name);
-//            s.setGroupNumber(groupNumber);
-//        });
+        client.setName(name);
+        client.setPhone(phone);
 
-        log.trace("updateClient: student={}", client.get());
+        log.trace("updateClient: updated client={}", client);
 
-        return client.orElse(null);
+        return client;
     }
-
+    public Optional<Client> findById(Long id) {
+        return clientRepository.findById(id);
+    }
 }

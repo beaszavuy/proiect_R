@@ -4,6 +4,7 @@ package ro.ubb.movie.web.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.ubb.movie.core.model.Client;
 import ro.ubb.movie.core.service.ClientService;
@@ -12,10 +13,7 @@ import ro.ubb.movie.web.dto.ClientDto;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by radu.
- */
+import java.util.Optional;
 
 @RestController
 public class ClientController {
@@ -62,6 +60,28 @@ public class ClientController {
         log.trace("updateClient: result={}", result);
 
         return result;
+    }
+//    @PutMapping("/{clientId}")
+//    public ClientDto updateClient(@PathVariable("clientId") Long clientId, @RequestBody ClientDto clientDto) {
+//        log.trace("updateClient: clientId={}, clientDtoMap={}", clientId, clientDto);
+//
+//        Client client = clientService.updateClient(clientId, clientDto.getName(), clientDto.getPhone());
+//        return clientConverter.convertModelToDto(client);
+//    }
+
+        @GetMapping("/clients/{id}")
+        public ResponseEntity<ClientDto> getClientById(@PathVariable Long id) {
+        log.trace("getClientById: id={}", id);
+
+        Optional<Client> client = clientService.findAll().stream()
+                .filter(c -> c.getId().equals(id))
+                .findFirst();
+
+        if (client.isPresent()) {
+            return ResponseEntity.ok(clientConverter.convertModelToDto(client.get()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 

@@ -15,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 @ComponentScan({"ro.ubb.movie.web.controller", "ro.ubb.movie.web.converter"})
+
 public class WebConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {

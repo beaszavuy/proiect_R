@@ -16,11 +16,15 @@
         class="client-item">
       <strong>{{ client.name }}</strong>
       <span class="phone">📞 {{ client.phone }}</span>
+
     </li>
   </ul>
+
 </div>
 
 <div *ngIf="selectedClient" class="client-detail-panel">
   <h3>Kiválasztott: {{ selectedClient.name | uppercase }}</h3>
   <button (click)="gotoDetail()" class="btn btn-primary">Részletek megtekintése</button>
+  <button (click)="editClient(selectedClient.id)">Szerkesztés</button>
+
 </div>

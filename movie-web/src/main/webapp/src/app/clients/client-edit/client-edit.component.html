@@ -1,0 +1,17 @@
+<div *ngIf="client">
+  <h2>Kliens szerkesztése</h2>
+
+  <label>
+    Név:
+    <input [(ngModel)]="client.name" />
+  </label>
+  <br />
+
+  <label>
+    Telefonszám:
+    <input [(ngModel)]="client.phone" />
+  </label>
+  <br />
+
+  <button (click)="onSave()">Mentés</button>
+</div>

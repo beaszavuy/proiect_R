@@ -23,10 +23,10 @@ export class ClientNewComponent implements OnInit {
 
     const client = {
       name,
-      phone,
+      phone
     };
 
-    this.clientService.saveClient({name: 'Teszt', phone: '12345'}).subscribe({
+    this.clientService.saveClient(client).subscribe({
       next: res => console.log('Mentés sikeres', res),
       error: err => console.error('Mentés hiba', err)
     });
