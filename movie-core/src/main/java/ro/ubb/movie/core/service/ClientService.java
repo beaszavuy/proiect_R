@@ -4,6 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.ubb.movie.core.model.Client;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ClientService {
     List<Client> findAll();
@@ -12,4 +13,6 @@ public interface ClientService {
 
     @Transactional
     Client updateClient(Long clientId, String name, String phone);
+    Optional<Client> findById(Long id); // most már minden rendben
+
 }

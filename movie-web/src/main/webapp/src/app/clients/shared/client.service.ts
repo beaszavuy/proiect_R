@@ -22,9 +22,11 @@ export class ClientService {
       .get<Array<Client>>(this.clientsUrl);
   }
 
-  getClient(id: number): Observable<Client> {
-    const url = `${this.clientsUrl}/${id}`;
-    return this.httpClient.get<Client>(url);
+  getClient(id: number): Observable<Client | undefined> {
+    return this.getClients()
+      .pipe(
+        map(clients => clients.find(clients => clients.id === id))
+      );
   }
 saveClient(client: {name: string; phone:string}):Observable<Client>{
     return this.httpClient.post<Client>(this.clientsUrl, client)
