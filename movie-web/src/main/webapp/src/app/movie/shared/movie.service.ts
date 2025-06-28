@@ -6,6 +6,7 @@ import {Movie} from "./movie.model";
 
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
+import {Client} from '../../clients/shared/client.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class MovieService {
   getMovie(id: number): Observable<Movie | undefined> {
     return this.getMovies()
       .pipe(
-        map(movies => movies.find(movie => movie.id === id))
+        map(movies => movies.find(movies => movies.id === id))
       );
   }
 
@@ -39,10 +40,11 @@ export class MovieService {
       .delete(url);
   }
 
-  // update(discipline: Discipline): Observable<Discipline> {
-  //   const url = `${this.disciplinesUrl}/${discipline.id}`;
-  //   return this.httpClient
-  //     .put<Discipline>(url, discipline);
-  // }
+  updateMovie(movie: Movie): Observable<Movie> {
+    const url = `${this.moviesUrl}/${movie.id}`;
+    return this.httpClient
+      .put<Movie>(url, movie);
+  }
+
 
 }

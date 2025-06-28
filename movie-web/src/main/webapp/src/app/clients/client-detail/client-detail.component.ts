@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
   selector: 'ubb-client-detail',
   templateUrl: './client-detail.component.html',
   styleUrls: ['./client-detail.component.css'],
+  standalone: true,
   imports: [
     NgIf,
     FormsModule

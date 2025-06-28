@@ -7,10 +7,17 @@
 
       <span style="font-weight: 600;">{{ movie.title }}</span>
 
-      <button (click)="onDelete(movie)"
-              style="background-color: #d32f2f; color: white; border: none; border-radius: 5px; padding: 6px 14px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;">
-        Delete
-      </button>
+      <div>
+        <button (click)="goToDetails(movie.id)"
+                style="background-color: #1976d2; color: white; border: none; border-radius: 5px; padding: 6px 14px; font-size: 13px; cursor: pointer; margin-right: 8px; transition: background-color 0.3s ease;">
+          Details
+        </button>
+
+        <button (click)="onDelete(movie)"
+                style="background-color: #d32f2f; color: white; border: none; border-radius: 5px; padding: 6px 14px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;">
+          Delete
+        </button>
+      </div>
 
     </li>
   </ol>
