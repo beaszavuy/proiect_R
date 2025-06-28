@@ -30,17 +30,20 @@ export class MovieListComponent implements OnInit {
   }
 
   onDelete(movie: Movie) {
-    this.movieService.deleteMovie(movie.id)
-      .subscribe(_ => {
-
+    this.movieService.deleteMovie(movie.id).subscribe({
+      next: () => {
         console.log("delete-ok");
-        //???? delete here???
-      });
-
-    this.movieService.getMovies().subscribe(movies => this.movies = movies);
-
+        this.loadMovies(); // külön metódusba szervezve a getMovies
+      },
+      error: (err) => {
+        console.error('Delete failed:', err);
+      }
+    });
   }
 
+  private loadMovies() {
+    this.movieService.getMovies().subscribe(movies => this.movies = movies);
+  }
   goToDetails(id: number | undefined): void {
     if (id !== undefined) {
       this.router.navigate(['/movies', id]);

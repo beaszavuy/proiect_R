@@ -8,6 +8,7 @@ import {MovieListComponent} from './movie-list/movie-list.component';
   imports: [
     MovieListComponent
   ],
+  standalone: true,
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
